@@ -22,13 +22,13 @@ The following **additional** features are implemented (so far not done):
 
 * [ ] Added an if-else statement in the onAddItem function to prevent empty items from taking up space in the list. 
 
-## Video Walkthrough (not uploaded yet)
+## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://recordit.co/bmImIsKN4g' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIF created with [Recordit](http://recordit.co/).
 
 ## Notes
 
@@ -41,7 +41,7 @@ fully knowing why or how the code for those members worked.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2019] [Ashley Chen]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
