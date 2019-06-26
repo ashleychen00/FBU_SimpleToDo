@@ -10,9 +10,9 @@ Time spent: **5** hours spent in total
 
 The following **required** functionality is completed:
 
-* [ ] User can **view a list of todo items**
-* [ ] User can **successfully add and remove items** from the todo list
-* [ ] User's **list of items persisted** upon modification and and retrieved properly on app restart
+* [x] User can **view a list of todo items**
+* [x] User can **successfully add and remove items** from the todo list
+* [x] User's **list of items persisted** upon modification and and retrieved properly on app restart
 
 The following **stretch** features are implemented (so far not done):
 
@@ -20,7 +20,7 @@ The following **stretch** features are implemented (so far not done):
 
 The following **additional** features are implemented (so far not done):
 
-* [ ] Added an if-else statement in the onAddItem function to prevent empty items from taking up space in the list. 
+* [x] Added an if-else statement in the onAddItem function to prevent empty items from taking up space in the list. 
 
 ## Video Walkthrough
 
