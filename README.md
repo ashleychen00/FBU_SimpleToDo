@@ -4,7 +4,7 @@
 
 Submitted by: **Ashley Chen**
 
-Time spent: **5** hours spent in total
+Time spent: **6** hours spent in total
 
 ## User Stories
 
@@ -27,9 +27,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](http://g.recordit.co/bmImIsKN4g.gif)
+![Video Walkthrough](https://www.youtube.com/watch?v=lR4Dfqv5nh8&list=UU-rwjzRblJ1oWMr_Xtq4rlg&index=3)
 
 GIF created with [Recordit](http://recordit.co/).
+
+(Originally was a GIF, but then issues occurred so I figured a Youtube video would be easier.)
 
 ## Notes
 
