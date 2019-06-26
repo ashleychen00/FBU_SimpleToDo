@@ -16,11 +16,12 @@ The following **required** functionality is completed:
 
 The following **stretch** features are implemented:
 
-* [ ] User can **tap a todo item in the list and bring up an edit screen for the todo item** and then have any changes to the text reflected in the todo list
+* [x] User can **tap a todo item in the list and bring up an edit screen for the todo item** and then have any changes to the text reflected in the todo list
 
 The following **additional** features are implemented:
 
 * [x] Added an if-else statement in the onAddItem function to prevent empty items from taking up space in the list. 
+* [x] Added an additional Toast saying "Good job!" when removing an item.
 
 ## Video Walkthrough
 
@@ -38,6 +39,7 @@ function to remove an item, to the xml format onAddItem function done for the bu
 It was cool to see how both of these methods differed from the methods origianlly introduced in the Hello World app. 
 Overall, it felt like we had to all of the methods and hints provided through the IDE and all the imported packages without
 fully knowing why or how the code for those members worked. 
+This was especially true for the stretch goal, since I never heard of or worked with Intent before. 
 
 ## License
 
