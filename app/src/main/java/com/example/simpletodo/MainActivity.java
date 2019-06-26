@@ -1,5 +1,6 @@
 package com.example.simpletodo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.apache.commons.io.FileUtils;
@@ -19,6 +21,13 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    // numeric code to identify edit activity
+    public static final int EDIT_REQUEST_CODE = 20;
+
+    // keys used for passing data between activities
+    public static final String ITEM_TEXT = "itemText";
+    public static final String ITEM_POSITION = "itemPosition";
 
     ArrayList<String> items;
     ArrayAdapter<String> itemsAdapter;
@@ -55,12 +64,53 @@ public class MainActivity extends AppCompatActivity {
                 // notify adapter of change
                 itemsAdapter.notifyDataSetChanged();
                 writeItems();
+                Toast.makeText(getApplicationContext(), "Good job!", Toast.LENGTH_SHORT).show();
                 // return true to indicate long click occurred
                 Log.i("Main activity", "Removed item" + position);
                 return true;
             }
         });
+
+        // stretch: to edit
+        listView_items.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                // create new activity
+                Intent i = new Intent(MainActivity.this, EditItemActivity.class);
+
+                // pass data being edited
+                i.putExtra(ITEM_TEXT, items.get(position));
+                i.putExtra(ITEM_POSITION, position);
+
+                // display activity
+                startActivityForResult(i, EDIT_REQUEST_CODE);
+
+            }
+        });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // if edit activity completed ok
+        if (resultCode == RESULT_OK && requestCode == EDIT_REQUEST_CODE) {
+            // extract updated item
+            String updated = data.getExtras().getString(ITEM_TEXT);
+            // extract original position
+            int position = data.getExtras().getInt(ITEM_POSITION);
+
+            // update model
+            items.set(position, updated);
+            // tell adapter
+            itemsAdapter.notifyDataSetChanged();
+            // persists
+            writeItems();
+            // notify user w/ toast
+            Toast.makeText(this, "Item edited successfully!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // FOR BUTTON
 
     public void onAddItem(View v) {
         // get text from editText view: first find editText, then get text
