@@ -67,12 +67,17 @@ public class MainActivity extends AppCompatActivity {
         EditText inputted_text =  (EditText) findViewById(R.id.editText_newItem);
         String input = inputted_text.getText().toString();
         // add item to list via the adapter
-        itemsAdapter.add(input);
-        // clear editText
-        inputted_text.setText("");
-        // notify user action completed with Toast
-        Toast.makeText(getApplicationContext(), "Item added to list", Toast.LENGTH_SHORT).show();
-        writeItems();
+        if (input.length() != 0) {
+            itemsAdapter.add(input);
+            // clear editText
+            inputted_text.setText("");
+            // notify user action completed with Toast
+            Toast.makeText(getApplicationContext(), "Item added to list", Toast.LENGTH_SHORT).show();
+            writeItems();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Item can't be empty", Toast.LENGTH_SHORT).show();
+        }
     }
 
     // FOR PERSISTENCE
